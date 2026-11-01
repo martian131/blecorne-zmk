@@ -42,57 +42,56 @@
     };
 
     keymap {
-        compatible = "zmk,keymap";
+            compatible = "zmk,keymap";
 
-        base {
-            display-name = "BASE";
-            bindings = <
-&kp LGUI    &as Q     &as W     &as E     &as R       &as T       &as Y     &as U     &as I      &as O    &as P     &kp BSPC
-&kp TAB     &as A     &as S     &as D     &as F       &as G       &as H     &as J     &as K      &as L    &as SEMI  &as SQT
-&kp LCTRL   &as Z     &as X     &as C     &as V       &as B       &as N     &as M     &as COMMA  &as DOT  &as FSLH  &kp ESC
-                                &mo 2     &kp LSHFT   &kp RET     &kp SPACE &kp LALT  &mo 1
-            >;
-        };
+            base {
+                display-name = "BASE";
+                bindings = <
+&kp TAB     AS(Q)   AS(W)   AS(E)   AS(R) AS(T)   AS(Y)       AS(U)      AS(I)     AS(O)   AS(P)     &kp BSPC
+&kp LCTRL   AS(A)   AS(S)   AS(D)   AS(F) AS(G)   AS(H)       AS(J)      AS(K)     AS(L)   AS(SEMI)  AS(SQT)
+&kp LSHFT   AS(Z)   AS(X)   AS(C)   AS(V) AS(B)   AS(N)       AS(M)      AS(COMMA) AS(DOT) AS(FSLH)  &kp ESC
+                            &mo 2   &kp LSHFT     &kp ENTER   &kp SPACE  &kp LALT  &mo 1
+                >;
+            };
 
-        nav {
-            display-name = "NAV";
-            bindings = <
+            nav {
+                display-name = "NAV";
+                bindings = <
 &trans      &trans        &trans        &trans        &trans        &trans         &kp PG_UP  &kp LS(TAB)   &kp UP    &kp LC(LS(TAB))   &trans  &trans
 &kp CAPS    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT         &trans  &trans
-&bt BT_CLR   &trans        &trans        &trans        &trans        &trans         &trans     &trans        &trans    &trans            &trans  &trans
-                                        &trans        &trans        &trans         &trans     &trans        &kp RALT
-            >;
-        };
+&bt BT_CLR  &trans        &trans        &trans        &trans        &trans         &trans     &trans        &trans    &trans            &trans  &trans
+                                        &trans        &trans        &trans         &trans     &trans        &trans
+                >;
+            };
 
-        sym {
-            display-name = "SYM";
-            bindings = <
-&kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6   &kp SLASH      &as N7  &as N8   &as N9   &as MINUS   &as BSLH
-&trans    &as LBKT  &as RBKT  &kp LPAR  &kp RPAR  &trans   &kp ASTERISK   &as N4  &as N5   &as N6   &as EQUAL   &trans
-&kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12  &kp COMMA      &as N1  &as N2   &as N3   &kp DOT     &kp TILDE
-                                        &trans    &trans   &trans         &trans  &as 0    &trans
-            >;
-        };
-
-        adj {
-            display-name = "ADJ";
-            bindings = <
+            sym {
+                display-name = "SYM";
+                bindings = <
+&kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6      &kp SLASH     AS(N7)  AS(N8)   AS(N9)   AS(MINUS)   AS(BSLH)
+&trans    AS(LBKT)  AS(RBKT)  &kp LPAR  &kp RPAR  &trans      &kp ASTERISK  AS(N4)  AS(N5)   AS(N6)   AS(EQUAL)   &trans
+&kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12     &kp COMMA     AS(N1)  AS(N2)   AS(N3)   &kp DOT     &kp TILDE
+                              &trans    &trans    &trans      &trans        AS(N0)  &trans
+                >;
+            };
+            adj {
+                display-name = "ADJ";
+                bindings = <
 &trans    &trans    &trans    &trans        &trans        &trans      &trans    &trans    &trans    &trans    &trans    &trans
 &trans    &trans    &trans    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_SLEEP &trans    &trans    &trans    &trans    &trans    &trans
 &trans    &trans    &trans    &trans        &trans        &trans      &trans    &trans    &trans    &trans    &trans    &trans
                               &trans        &trans        &trans      &trans    &trans    &trans
-            >;
-        };
-        extra_1 {
-                status = "reserved";
-        };
+                >;
+            };
+            extra_1 {
+                    status = "reserved";
+            };
 
-        extra_2 {
-                status = "reserved";
-        };
+            extra_2 {
+                    status = "reserved";
+            };
 
-        extra_3 {
-                status = "reserved";
-        };
+            extra_3 {
+                    status = "reserved";
+            };
     };
 };
