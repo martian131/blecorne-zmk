@@ -47,10 +47,10 @@
             base {
                 display-name = "BASE";
                 bindings = <
-&kp TAB     AS(Q)   AS(W)   AS(E)   AS(R) AS(T)   AS(Y)       AS(U)      AS(I)     AS(O)   AS(P)     &kp BSPC
-&kp LCTRL   AS(A)   AS(S)   AS(D)   AS(F) AS(G)   AS(H)       AS(J)      AS(K)     AS(L)   AS(SEMI)  AS(SQT)
-&kp LSHFT   AS(Z)   AS(X)   AS(C)   AS(V) AS(B)   AS(N)       AS(M)      AS(COMMA) AS(DOT) AS(FSLH)  &kp ESC
-                            &mo 2   &kp LSHFT     &kp ENTER   &kp SPACE  &kp LALT  &mo 1
+&kp LGUI    AS(Q)   AS(W)   AS(E)   AS(R) AS(T)   AS(Y)       AS(U)      AS(I)     AS(O)   AS(P)     &kp BSPC
+&kp TAB     AS(A)   AS(S)   AS(D)   AS(F) AS(G)   AS(H)       AS(J)      AS(K)     AS(L)   AS(SEMI)  AS(SQT)
+&kp LCTRL   AS(Z)   AS(X)   AS(C)   AS(V) AS(B)   AS(N)       AS(M)      AS(COMMA) AS(DOT) AS(FSLH)  &kp ESC
+                            &mo 1   &kp LSHFT     &kp ENTER   &kp SPACE  &kp LALT  &mo 2
                 >;
             };
 
