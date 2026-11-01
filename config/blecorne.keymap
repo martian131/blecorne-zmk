@@ -19,6 +19,7 @@
 #define NAV  1
 #define SYM  2
 #define ADJ  3
+#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
 / {
     conditional_layers {
@@ -29,46 +30,57 @@
         };
     };
 
+    behaviors {
+      as: auto_shift {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <2>;
+          tapping-term-ms = <175>;
+          quick-tap-ms = <0>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
+      };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         base {
             display-name = "BASE";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R       &kp T        &kp Y    &kp U            &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F       &kp G        &kp H    &kp J            &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V       &kp B        &kp N    &kp M            &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &lt 1 LALT  &kp SPACE    &kp RET  &lt 2 BACKSPACE  &kp RALT
+&kp LGUI    &as Q     &as W     &as E     &as R       &as T       &as Y     &as U     &as I      &as O    &as P     &kp BSPC
+&kp TAB     &as A     &as S     &as D     &as F       &as G       &as H     &as J     &as K      &as L    &as SEMI  &as SQT
+&kp LCTRL   &as Z     &as X     &as C     &as V       &as B       &as N     &as M     &as COMMA  &as DOT  &as FSLH  &kp ESC
+                                &mo 2     &kp LSHFT   &kp RET     &kp SPACE &kp LALT  &mo 1
             >;
         };
 
         nav {
             display-name = "NAV";
             bindings = <
-&kp ESC       &kp N1            &kp N2     &kp N3     &kp N4            &kp N5            &kp N6           &kp N7             &kp N8        &kp N9                &kp N0                 &kp BSPC
-&kp CAPSLOCK  &kp EXCL          &kp AT     &kp HASH   &kp DOLLAR        &kp PERCENT       &kp CARET        &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE
-&kp LSHFT     &studio_unlock    &kp TILDE  &kp GRAVE  &kp LEFT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &trans        &trans                &trans                 &kp PIPE
-                                           &kp LGUI   &trans            &kp SPACE         &kp RET          &trans             &kp RALT
+&trans      &trans        &trans        &trans        &trans        &trans         &kp PG_UP  &kp LS(TAB)   &kp UP    &kp LC(LS(TAB))   &trans  &trans
+&kp CAPS    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT         &trans  &trans
+&bt BTCLR   &trans        &trans        &trans        &trans        &trans         &trans     &trans        &trans    &trans            &trans  &trans
+                                        &trans        &trans        &trans         &trans     &trans        &kp RALT
             >;
         };
 
         sym {
             display-name = "SYM";
             bindings = <
-&kp ESC    &none     &none    &kp UNDER   &kp EQUAL    &kp PAGE_UP      &none             &none       &none       &kp BACKSLASH      &kp PIPE         &kp BSPC
-&kp LCTRL  &kp HOME  &kp END  &kp MINUS   &kp PLUS     &kp PAGE_DOWN    &none             &kp LEFT    &kp DOWN    &kp UP_ARROW       &kp RIGHT        &kp RIGHT_GUI
-&kp LSHFT  &trans    &trans   &kp K_COPY  &kp K_PASTE  &trans           &kp K_PLAY_PAUSE  &kp K_PREV  &kp K_NEXT  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BACKSLASH
-                              &kp LGUI    &trans       &kp SPACE        &kp RET           &trans      &kp RALT
+&kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6   &kp SLASH      &as N7  &as N8   &as N9   &as MINUS   &as BSLH
+&trans    &as LBKT  &as RBKT  &kp LPAR  &kp RPAR  &trans   &kp ASTERISK   &as N4  &as N5   &as N6   &as EQUAL   &trans
+&kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12  &kp COMMA      &as N1  &as N2   &as N3   &kp DOT     &kp TILDE
+                                        &trans    &trans   &trans         &trans  &as 0   &trans
             >;
         };
 
         adj {
             display-name = "ADJ";
             bindings = <
-&kp ESC     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6           &kp F7        &kp F8        &kp F9            &kp F10        &kp F11
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans           &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(UP_ARROW)  &kp LC(RIGHT)  &kp F12
-&kp LSHFT   &trans        &trans        &trans        &trans        &out OUT_TOG    &studio_unlock   &trans        &trans        &trans            &trans         &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET          &trans        &kp RALT
+&trans    &trans    &trans    &trans        &trans        &trans      &trans    &trans    &trans    &trans    &trans    &trans
+&trans    &trans    &trans    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_SLEEP &trans    &trans    &trans    &trans    &trans    &trans
+&trans    &trans    &trans    &trans        &trans        &trans      &trans    &trans    &trans    &trans    &trans    &trans
+                              &trans        &trans        &trans      &trans    &trans    &trans
             >;
         };
         extra_1 {
