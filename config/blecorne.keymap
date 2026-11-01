@@ -47,7 +47,7 @@
             base {
                 display-name = "BASE";
                 bindings = <
-&kp LGUI    AS(Q)   AS(W)   AS(E)   AS(R) AS(T)   AS(Y)       AS(U)      AS(I)     AS(O)   AS(P)     &kp BSPC
+AS(Q)    AS(Q)   AS(W)   AS(E)   AS(R) AS(T)   AS(Y)       AS(U)      AS(I)     AS(O)   AS(P)     &kp BSPC
 &kp TAB     AS(A)   AS(S)   AS(D)   AS(F) AS(G)   AS(H)       AS(J)      AS(K)     AS(L)   AS(SEMI)  AS(SQT)
 &kp LCTRL   AS(Z)   AS(X)   AS(C)   AS(V) AS(B)   AS(N)       AS(M)      AS(COMMA) AS(DOT) AS(FSLH)  &kp ESC
                             &mo 1   &kp LSHFT     &kp ENTER   &kp SPACE  &kp LALT  &mo 2
@@ -59,7 +59,7 @@
                 bindings = <
 &trans      &trans        &trans        &trans        &trans        &trans         &kp PG_UP  &kp LS(TAB)   &kp UP    &kp LC(LS(TAB))   &trans  &trans
 &kp CAPS    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT         &trans  &trans
-&bt BT_CLR  &trans        &trans        &trans        &trans        &trans         &trans     &trans        &trans    &trans            &trans  &trans
+&trans  &bt BT_CLR        &trans        &trans        &trans        &trans         &trans     &trans        &trans    &trans            &trans  &trans
                                         &trans        &trans        &trans         &trans     &trans        &trans
                 >;
             };
