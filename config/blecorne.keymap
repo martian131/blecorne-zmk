@@ -68,7 +68,7 @@
                 display-name = "SYM";
                 bindings = <
 &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6      &kp SLASH     AS(N7)  AS(N8)   AS(N9)   AS(MINUS)   AS(BSLH)
-&trans    $trans    AS(LBKT)  AS(RBKT)  &kp LPAR  &kp RPAR    &kp ASTERISK  AS(N4)  AS(N5)   AS(N6)   AS(EQUAL)   &kp DEL
+&trans    &trans    AS(LBKT)  AS(RBKT)  &kp LPAR  &kp RPAR    &kp ASTERISK  AS(N4)  AS(N5)   AS(N6)   AS(EQUAL)   &kp DEL
 &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12     &kp COMMA     AS(N1)  AS(N2)   AS(N3)   &kp DOT     &kp TILDE
                               &trans    &trans    &trans      &trans        AS(N0)  &trans
                 >;
